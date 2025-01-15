@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 21:19:05 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/12 21:25:10 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/01/15 23:30:29 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*n;
 
 	l = ft_strlen(s) + 1;
-	n = calloc(sizeof(char), l);
+	n = ft_calloc(sizeof(char), l);
 	if (!n)
 		return (NULL);
 	ft_strlcpy(n, s, l);
