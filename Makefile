@@ -63,7 +63,7 @@ bonus: $(OBJ) $(BOBJ)
 	ar rcs $(NAME) $(OBJ) $(BOBJ)
 
 %.o:%.c
-	$(CC) $(CFLAGS) $< -c $@
+	$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJ) $(BOBJ)
