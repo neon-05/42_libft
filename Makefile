@@ -52,21 +52,26 @@ BSRC = \
 	ft_lstnew.c \
 	ft_lstsize.c\
 
-BOBJ = $(BSRC:%.c=%.o)
+BOBJ = $(BSRC:%.c=%.o) $(OBJ)
+
+ODIR = obj/
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(addprefix $(ODIR), $(notdir $(OBJ)))
 
-bonus: $(OBJ) $(BOBJ)
-	ar rcs $(NAME) $(OBJ) $(BOBJ)
+bonus: $(BOBJ)
+	ar rcs $(NAME) $(addprefix $(ODIR), $(notdir $(BOBJ)))
 
-%.o:%.c
-	$(CC) $(CFLAGS) $< -o $@
+%.o:%.c $(ODIR)
+	$(CC) $(CFLAGS) $< -o $(addprefix $(ODIR), $(notdir $@))
+
+$(ODIR):
+	mkdir $(ODIR)
 
 clean:
-	rm -f $(OBJ) $(BOBJ)
+	rm -rf $(ODIR)
 
 fclean: clean
 	rm -f $(NAME)
