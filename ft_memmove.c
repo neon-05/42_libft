@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:49:49 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/12 18:54:47 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:50:06 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!dst || !src)
+		return (NULL);
 	while (i < n)
 	{
 		if (dst < src)

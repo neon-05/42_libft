@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:05:22 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 18:09:07 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:54:31 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	char	*new;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	new = malloc(len);
 	if (!new)

@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:12:44 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 18:12:45 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:55:42 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*new;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	new = malloc(ft_strlen(s) + 1);
 	while (s[i])
 	{

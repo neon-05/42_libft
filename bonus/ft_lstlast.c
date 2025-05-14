@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 20:38:12 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 20:38:45 by ylabussi         ###   ########.fr       */
+/*   Created: 2024/12/13 20:38:19 by ylabussi          #+#    #+#             */
+/*   Updated: 2025/05/14 14:40:16 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
+	if (lst && lst->next)
+		return (ft_lstlast(lst->next));
 	else
-		return (ft_lstsize(lst->next) + 1);
+		return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:09:43 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 17:16:54 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:57:50 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*n;
 
-	if (len > ft_strlen(s))
+	if (!s || len > ft_strlen(s))
 		return (NULL);
 	n = malloc(len + 1);
 	if (!n)

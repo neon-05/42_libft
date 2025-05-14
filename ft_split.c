@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:19:47 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 17:53:11 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:51:37 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	size_t	arlen;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	arlen = split_wc(s, c);
 	arr = ft_calloc(sizeof(char *), arlen + 1);
 	if (!arr)

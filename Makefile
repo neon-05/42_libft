@@ -39,39 +39,38 @@ SRC = \
 	ft_substr.c \
 	ft_tolower.c \
 	ft_toupper.c
-OBJ = $(SRC:%.c=%.o)
+OBJ = $(addprefix $(ODIR)/, $(SRC:.c=.o))
 
 BSRC = \
-	ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c\
+	$(SRC) \
+	bonus/ft_lstadd_back.c \
+	bonus/ft_lstadd_front.c \
+	bonus/ft_lstclear.c \
+	bonus/ft_lstdelone.c \
+	bonus/ft_lstiter.c \
+	bonus/ft_lstlast.c \
+	bonus/ft_lstmap.c \
+	bonus/ft_lstnew.c \
+	bonus/ft_lstsize.c
+BOBJ = $(addprefix $(ODIR)/, $(BSRC:.c=.o))
 
-BOBJ = $(BSRC:%.c=%.o) $(OBJ)
-
-ODIR = obj/
+ODIR = obj
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(addprefix $(ODIR), $(notdir $(OBJ)))
+	ar rcs $(NAME) $(OBJ)
 
 bonus: $(BOBJ)
-	ar rcs $(NAME) $(addprefix $(ODIR), $(notdir $(BOBJ)))
+	ar rcs $(NAME) $(BOBJ)
 
-%.o:%.c $(ODIR)
-	$(CC) $(CFLAGS) $< -o $(addprefix $(ODIR), $(notdir $@))
+$(ODIR)/%.o:%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -o $@ $<
 
-$(ODIR):
-	mkdir $(ODIR)
 
 clean:
-	rm -rf $(ODIR)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

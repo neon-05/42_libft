@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 19:12:31 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/12 19:19:40 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:47:13 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	p = NULL;
-	while (*(t_byte *)(s + i) != (t_byte) c && i < n)
+	if (!s)
+		return (NULL);
+	while (*(t_byte *)(s + i) != (t_byte)c && i < n)
 		i++;
 	if (i < n)
 		p = (void *)(s + i);

@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:13:39 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/13 18:59:11 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:57:32 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	start = i;

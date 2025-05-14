@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 21:28:28 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/12 21:44:00 by ylabussi         ###   ########.fr       */
+/*   Updated: 2025/05/14 14:42:27 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(const char *s)
 	i = 0;
 	n = 0;
 	sign = 1;
+	if (!s)
+		return (0);
 	while (s[i] == ' ' || ('\t' <= s[i] && s[i] <= '\r'))
 		i++;
 	if (s[i] == '+')
